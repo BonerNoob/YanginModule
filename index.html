@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Acme&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            background-color: #ffffff; /* Light gray background */
+            font-family: sans-serif;
+        }
+
+        .hero-title {
+            font-family: 'Acme', sans-serif;
+            white-space: nowrap;
+            font-weight: bold;
+            text-align: center;
+            font-size: clamp(18px, 3.5vw, 60px); 
+            margin: 30px 0;
+            width: 100%;
+        }
+
+        /* Banner Styling */
+        .banner-container {
+            width: 100%;
+            max-width: 1200px; /* Limits width on huge monitors */
+            margin: 0 auto;    /* Centers the container */
+            padding: 0 20px;   /* Adds a little breathing room on the sides */
+            box-sizing: border-box;
+        }
+
+        .banner-img {
+            width: 100%;
+            height: auto;      /* Keeps the image from stretching */
+            border-radius: 12px; /* Rounded corners for a modern look */
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1); /* Soft shadow */
+            display: block;
+        }
+
+        .summary-section {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 0 20px;
+            line-height: 1.6;
+            color: #000000;
+            text-align: center;
+        }
+
+        .features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    max-width: 1000px;
+    
+    /* THE FIX: */
+    margin: 40px auto; /* 'auto' on the sides pushes it to the center */
+    justify-content: center; /* Centers the cards inside the grid if they don't fill the row */
+    
+    padding: 0 20px;
+}
+
+
+
+.feature-card {
+    background: rgb(230, 218, 207);
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    border-bottom: 4px solid #d9534f; /* A fire-red accent */
+    transition: transform 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+}
+
+.feature-icon {
+    font-size: 40px;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.feature-card h3 {
+    font-family: 'Acme', sans-serif;
+    font-size: 1.2rem;
+    margin: 10px 0;
+    color: #333;
+}
+
+.feature-card p {
+    font-size: 0.9rem;
+    color: #666;
+    line-height: 1.4;
+}
+        
+    </style>
+
+    <title>Arduino Fire Detection</title>
+</head>
+<body>
+
+    <p class="hero-title">Görüntü Tabanlı Yangın Algılama Modülü.</p>
+
+    <!-- Banner Image -->
+    <div class="banner-container">
+        <img src="https://i.postimg.cc/FFJ8KJPv/Backigo.jpg" alt="Fire Detection Banner" class="banner-img">
+    </div>
+
+    <!-- Summary Section -->
+    <div class="summary-section">
+    <h2 style="font-family: 'Acme', sans-serif; color: #d9534f;">Proje Özeti</h2>
+    <p style="text-align: justify; font-size: 1.1rem;">
+        Bu proje, son yıllarda Türkiye'de artış gösteren orman yangınlarına karşı üç öğrenci tarafından 
+        geliştirilmiş bir erken müdahale çözümüdür. Sistem, <b>termal kameralar</b> ile ısı değişimlerini izlerken 
+        havadaki <b>karbondioksit (CO2)</b> seviyesini analiz eder. Yangın tespiti durumunda, cihaz üzerindeki 
+        <b>GPS modülü</b> sayesinde elde edilen konum verileri anlık olarak <b>SMS</b> ile yetkililere ulaştırılır.
+    </p>
+</div>
+
+<div class="features-grid">
+    <!-- Thermal Camera -->
+    <div class="feature-card">
+        <span class="feature-icon">🌡️</span>
+        <h3>Termal Kamera</h3>
+        <p>Görsel verileri ısı haritasına dönüştürerek alevleri anında tespit eder.</p>
+    </div>
+
+    <!-- CO2 Meter -->
+    <div class="feature-card">
+        <span class="feature-icon">☁️</span>
+        <h3>CO2 Analizi</h3>
+        <p>Havadaki karbondioksit artışını ölçerek duman yoğunluğunu takip eder.</p>
+    </div>
+
+    <!-- GPS Module -->
+    <div class="feature-card">
+        <span class="feature-icon">📍</span>
+        <h3>GPS Konum</h3>
+        <p>Yangının tam koordinatlarını belirleyerek hata payını sıfıra indirir.</p>
+    </div>
+
+    <!-- SMS Module -->
+    <div class="feature-card">
+        <span class="feature-icon">📲</span>
+        <h3>SMS Bildirimi</h3>
+        <p>İnternet olmasa dahi GSM hattı üzerinden yetkililere acil durum mesajı gönderir.</p>
+    </div>
+</div>
+
+</body>
+</html>
